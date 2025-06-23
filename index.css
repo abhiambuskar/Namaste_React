@@ -1,3 +1,75 @@
-#name{
-    color: red;
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.logo{
+    width: 100px;
+}
+
+.nav-items > ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 24px;
+}
+
+.nav-items > ul > li{
+    padding: 10px;
+    margin: 10px;
+}
+
+.res-cards{
+    padding: 15px;
+    width: 195px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.res-cards:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.search{
+    padding: 10px;
+}
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.res-image{
+    width: 190px;
+    height: 100px;
+    padding-left: 5px;
+}
+
+.filter-btn{
+    margin: 10px;
+}
+
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-card{
+    padding: 15px;
+    width: 195px;
+    height: 300px;
+    margin: 10px;
+    background-color: rgb(241, 241, 241);
+}
+
+.nav-items > ul > button{
+    
+    margin: 10px;
+    background-color: #24a0ed ;
+    color: white;
+    
+    border-radius: 5px;
 }
