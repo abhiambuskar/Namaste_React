@@ -6,6 +6,7 @@ const useRestaurant_Menu = (resid) =>{
     const [res_info, setres_info] = useState([])
     useEffect(() =>{
         fetchdata();
+        console.log(res_info)
     },[])
 
     const fetchdata = async () =>{

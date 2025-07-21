@@ -5,15 +5,26 @@ const Restaurant_cards = (props) =>{
     const {resdata} = props
     const {cloudinaryImageId, name, cuisines, avgRating,costForTwo } = resdata?.info
     return (
-        <div className="res-cards">
+        <div className="m-2 p-2 w-[190px] bg-gray-300 rounded-lg hover:bg-gray-400  ">
             
-            <img alt="res-image"  className="res-image"src={CARD_URL + cloudinaryImageId}/>
-            <h3>{name}</h3>
-            <h4>{cuisines.join(", ")}</h4>
+            <img alt="res-image"  className="rounded-lg"src={CARD_URL + cloudinaryImageId}/>
+            <h3 className="font-bold">{(name).slice(0,20)}</h3>
+            <h4>{(cuisines.join(", ")).slice(0, 20)}</h4>
             <h4>{avgRating} stars</h4>
             <h4>{costForTwo}</h4>
         </div>
     )
+}
+
+export const withpromoteCard = (Restaurant_cards) =>{
+    return (props) =>{
+        return(
+            <div>
+                <label className="absolute bg-black text-white rounded-sm">Promoted</label>
+                <Restaurant_cards {...props}/>
+            </div>
+        )
+    }
 }
 
 export default Restaurant_cards
