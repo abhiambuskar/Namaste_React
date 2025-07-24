@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/abhiambuskar/Namaste_React.git"
   },
+  
   "keywords": [
     "React"
   ],
@@ -37,5 +38,10 @@
   },
   "browserslist": [
     "last 2 version"
-  ]
+  ],
+  "@parcel/resolver-default": {
+      "packageExports": true
+  }
+  
 }
+

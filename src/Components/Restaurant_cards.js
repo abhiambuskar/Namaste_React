@@ -1,7 +1,11 @@
+import { useContext } from "react"
 import { CARD_URL } from "../utils/constants"
+import UserContext from "../utils/UserContext"
 
 const Restaurant_cards = (props) =>{
     // console.log(props)
+    const {loggedInUser} = useContext(UserContext)
+    
     const {resdata} = props
     const {cloudinaryImageId, name, cuisines, avgRating,costForTwo } = resdata?.info
     return (
@@ -12,6 +16,7 @@ const Restaurant_cards = (props) =>{
             <h4>{(cuisines.join(", ")).slice(0, 20)}</h4>
             <h4>{avgRating} stars</h4>
             <h4>{costForTwo}</h4>
+            <h4>User: {loggedInUser}</h4>
         </div>
     )
 }

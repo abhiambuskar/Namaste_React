@@ -1,9 +1,10 @@
 import Restaurant_cards, {withpromoteCard} from "./Restaurant_cards";
 // import resobj from "../utils/mockdata";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
     
 
 const Body = () =>{
@@ -11,6 +12,7 @@ const Body = () =>{
     const [Listofrestaurant, setListofrestaurant] = useState([])
     const [searchtext, setsearchtext] = useState("")
     const [listfilter_restaurants, setlistfilter_restaurants] = useState([])
+    const {setname, loggedInUser} = useContext(UserContext)
 
     useEffect( () =>{
         fetchdata()
@@ -60,6 +62,15 @@ const Body = () =>{
                             setlistfilter_restaurants(filterlist)
                         }}>Top rated restaurant</button>
                 </div>
+
+                <div className=" px-2 py-1 m-2 rounded-lg hover:cursor-pointer">
+                    <label>UserName </label>
+                    <input className="border border-black" value={loggedInUser} onChange={(e) =>{
+                        setname(e.target.value)
+                    }}/>
+                </div>
+
+
 
                 <div className="bg-gray-400 px-2 py-1 m-2 rounded-lg hover:cursor-pointer">
                     <button className="reset-btn hover:cursor-pointer"
