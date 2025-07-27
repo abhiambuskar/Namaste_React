@@ -8,6 +8,9 @@ import { createBrowserRouter ,RouterProvider, Outlet} from "react-router";
 import Error from "./Components/Error";
 import Restaurant_Menu from "./Components/Restaurant_Menu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./Components/Cart";
 // import Grocery from "./Components/Grocery";
 
 
@@ -75,12 +78,14 @@ const Applayout = ()=>{
 
     const [name, setname] = useState("");
     return (
-        <UserContext.Provider value={{loggedInUser: name, setname}}>
-            <div className="App">
-                <Header/>
-                <Outlet/>
-            </div>
-        </UserContext.Provider>
+        <Provider store={appStore}>
+            <UserContext.Provider value={{loggedInUser: name, setname}}>
+                <div className="App">
+                    <Header/>
+                    <Outlet/>
+                </div>
+            </UserContext.Provider>
+        </Provider>
     )
 }
 
@@ -102,6 +107,10 @@ const approuter =  createBrowserRouter([
             },{
                 path:"/contact",
                 element:<ContactUs/>
+            },
+            {
+                path:"/cart",
+                element:<Cart/>
             },{
                 path:"/restaurants/:resid",
                 element:<Restaurant_Menu/>
