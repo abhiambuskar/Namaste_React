@@ -5,7 +5,6 @@ import ItemList from "./ItemList"
 
 const Restaurant_Category = ({data, showitems, setshowIndex}) =>{
 
-
     const handleClick = () =>{
         // if(showitems === false){
         //     setshowitems(true)
@@ -26,10 +25,6 @@ const Restaurant_Category = ({data, showitems, setshowIndex}) =>{
 
                 {showitems && <ItemList items={data?.itemCards} />}
             </div>
-            
-
-                
-        
         </div>
     )
         

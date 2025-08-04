@@ -7,7 +7,8 @@
     "test": "jest",
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "clean": "rimraf parcel-cache dist"
+    "clean": "rimraf parcel-cache dist",
+    "watch-test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,16 @@
   },
   "homepage": "https://github.com/abhiambuskar/Namaste_React#readme",
   "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "babel-jest": "^30.0.5",
+    "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
+    "jest-fixed-jsdom": "^0.0.9",
     "parcel": "^2.14.2",
     "process": "^0.11.10"
   },

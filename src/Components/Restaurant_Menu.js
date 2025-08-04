@@ -13,6 +13,7 @@ const Restaurant_Menu = () => {
     const res_info = useRestaurant_Menu(resid)
     const [showIndex, setshowIndex] = useState(null)
 
+    const [showitems, setshowitems] = useState(false)
       if (!res_info?.cards) {
         return <Shimmer />;
       }
@@ -20,7 +21,7 @@ const Restaurant_Menu = () => {
       
     
     const {name, cuisines} = res_info?.cards[2]?.card?.card?.info
-    console.log(name)
+    // console.log(name)
     // console.log(res_info?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card)
     // const {carousel} = res_info?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
     // console.log(carousel)
@@ -43,9 +44,7 @@ const Restaurant_Menu = () => {
               data={category?.card?.card}
               showitems={index=== showIndex? true: false}
 
-              setshowIndex={()=> 
-                showIndex === index? showitems = false:
-                setshowIndex(index)}
+              setshowIndex={() => setshowIndex((prevIndex) => (prevIndex === index ? null : index))}
             />
           ))}
         

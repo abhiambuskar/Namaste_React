@@ -26,7 +26,7 @@ const Cart = () =>{
 
 
             </div>
-            <div className="w-6/12 m-auto ">
+            <div className="w-6/12 m-auto h-2">
                 {cartItems.length === 0? 
                 <h1 className="font-bold text-2xl m-4">Your Cart is Empty please Pick some Items!!!</h1>:
                 <ItemList className="bg-gray-200 rounded-lg" items={cartItems}/>}

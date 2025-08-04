@@ -23,11 +23,11 @@ const Body = () =>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.6486772&lng=73.7592659&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
 
         const json = await data.json()
-        console.log(json)
+        // console.log(json)
         setListofrestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setlistfilter_restaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        console.log(Listofrestaurant)
-        console.log(listfilter_restaurants)
+        // console.log(Listofrestaurant)
+        // console.log(listfilter_restaurants)
     }
     const onlinestatus = useOnlineStatus()
     if(onlinestatus === false){
@@ -41,7 +41,7 @@ const Body = () =>{
     return(
         <div className="body">
             <div className="filter flex">
-                <input type="text" className="border border-solid border-black  rounded-lg m-1" value={searchtext} onChange={(e)=>{
+                <input type="text" data-testid="inputbox" className="border border-solid border-black  rounded-lg m-1" value={searchtext} onChange={(e)=>{
                     setsearchtext(e.target.value)
                 }}/>
                 <button className="bg-green-300 px-2 py-1 m-2 rounded-lg hover:cursor-pointer"onClick={()=>{
@@ -49,7 +49,7 @@ const Body = () =>{
                     const filter_restaurants = Listofrestaurant.filter(
                         (res) => res.info.name.toLowerCase().includes(searchtext.toLowerCase())
                     )
-                    console.log("Serach restaurants are " + {filter_restaurants})
+                    // console.log("Serach restaurants are " + {filter_restaurants})
                     setlistfilter_restaurants(filter_restaurants)
                 }}>Search</button>
                 
